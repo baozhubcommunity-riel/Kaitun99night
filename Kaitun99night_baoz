@@ -1,5 +1,9 @@
+setclipboard("by baozhub")
 local p = game.Players:FindFirstChild("Bl_viethuybao")
 if p and p.Character then
     Instance.new("Highlight", p.Character).FillColor = Color3.fromRGB(0, 255, 0)
 end
+task.wait(3)
+for _,p in next,game.Players:GetPlayers() do if p.Character and p.Character:FindFirstChild("Head") then local g=Instance.new("BillboardGui",p.Character.Head)g.Size=UDim2.new(0,100,0,20)g.AlwaysOnTop=true;local t=Instance.new("TextLabel",g)t.Size=UDim2.new(1,0,1,0)t.BackgroundTransparency=1;t.Text= "join baozhub" end end
+task.wait(1)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/caomod2077/Script/refs/heads/main/FNDayFarm.lua'))()
