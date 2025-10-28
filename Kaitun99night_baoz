@@ -1,3 +1,38 @@
+-- Server script: đặt trong ServerScriptService
+local Players = game:GetService("Players")
+
+local CORRECT_PLACE_ID = 79546208627805
+local TARGET_POS = Vector3.new(-20.89, 5.00, 1.92)
+
+local function teleportCharacter(char)
+	local hrp = char:WaitForChild("HumanoidRootPart", 5)
+	if hrp then
+		hrp.CFrame = CFrame.new(TARGET_POS)
+	end
+end
+
+local function onPlayer(player)
+	-- nếu character đã tồn tại ngay (test trong Play), teleport luôn
+	if player.Character then
+		if game.PlaceId == CORRECT_PLACE_ID then
+			teleportCharacter(player.Character)
+		end
+	end
+
+	player.CharacterAdded:Connect(function(char)
+		if game.PlaceId == CORRECT_PLACE_ID then
+			teleportCharacter(char)
+		end
+	end)
+end
+
+Players.PlayerAdded:Connect(onPlayer)
+
+-- (tuỳ chọn) nếu muốn teleport những người đã có mặt khi script khởi chạy
+for _, p in ipairs(Players:GetPlayers()) do
+	onPlayer(p)
+end
+task.wait(10)
 setclipboard("by baozhub")
 local p = game.Players:FindFirstChild("Bl_viethuybao")
 if p and p.Character then
