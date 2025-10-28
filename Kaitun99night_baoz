@@ -20,3 +20,4 @@ task.wait(1)
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/caomod2077/Script/refs/heads/main/FNDayFarm.lua'))()
 task.wait(1)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/baozhubcommunity-riel/8fxuidid/refs/heads/main/Status'))()
