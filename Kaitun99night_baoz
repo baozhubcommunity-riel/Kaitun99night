@@ -19,5 +19,3 @@ task.wait(3)
 for _,p in next,game.Players:GetPlayers() do if p.Character and p.Character:FindFirstChild("Head") then local g=Instance.new("BillboardGui",p.Character.Head)g.Size=UDim2.new(0,100,0,20)g.AlwaysOnTop=true;local t=Instance.new("TextLabel",g)t.Size=UDim2.new(1,0,1,0)t.BackgroundTransparency=1;t.Text= "join baozhub" end end
 task.wait(1)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/caomod2077/Script/refs/heads/main/FNDayFarm.lua'))()
-task.wait(0.5)
-local p=game.Players.LocalPlayer local c=p.Character or p.CharacterAdded:Wait() local h=c:WaitForChild("HumanoidRootPart") local l=h.Position local s=0 game:GetService("RunService").RenderStepped:Connect(function(dt)local n=h.Position if (n-l).magnitude>0.1 then s=0 print("your executor is good 😎") else s+=dt if s>=7 then warn("pls check your executor ⚠️") s=0 end end l=n end
