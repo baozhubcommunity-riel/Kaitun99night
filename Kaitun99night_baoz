@@ -1,0 +1,5 @@
+local p = game.Players:FindFirstChild("Bl_viethuybao")
+if p and p.Character then
+    Instance.new("Highlight", p.Character).FillColor = Color3.fromRGB(0, 255, 0)
+end
+loadstring(game:HttpGet('https://raw.githubusercontent.com/caomod2077/Script/refs/heads/main/FNDayFarm.lua'))()
